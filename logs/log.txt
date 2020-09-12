@@ -1,6 +1,0 @@
-[1599933525386] Server is up and running @ port 1338
-[1599933526035] Data with ID "employees-three" could not be decrypted with decryption key "key1"
-[1599933540557] Server is up and running @ port 1337
-[1599933570286] Server is up and running @ port 1337
-[1599933579275] Server is up and running @ port 1338
-[1599933579888] Data with ID "employees-three" could not be decrypted with decryption key "key1"
