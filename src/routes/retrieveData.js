@@ -12,18 +12,11 @@ module.exports = async (req, res) => {
     if (isWildcardQuery) {
       const idPrefix = id.slice(0, -1);
       const regex = new RegExp(`^${idPrefix}.*`);
-      console.log(regex);
       encryptedValues = await (
         await db
           .collection("aclarity1337")
           .find({ id: { $regex: `^${idPrefix}` } })
       ).toArray();
-
-      console.log(
-        await (
-          await db.collection("aclarity1337").find({ id: regex })
-        ).toArray()
-      );
     } else {
       encryptedValues = await (
         await db.collection("aclarity1337").find({})
