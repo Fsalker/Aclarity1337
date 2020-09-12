@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
       ).toArray();
     } else {
       encryptedValues = await (
-        await db.collection("aclarity1337").find({})
+        await db.collection("aclarity1337").find({ id })
       ).toArray();
     }
 
@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
         req.app.locals.log(
           `Data with ID "${data.id}" could not be decrypted with decryption key "${decryption_key}"`
         );
-        req.app.locals.log(e);
+        // req.app.locals.log(e);
         return null;
       }
     });

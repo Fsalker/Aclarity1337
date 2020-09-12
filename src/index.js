@@ -10,11 +10,14 @@ const {
 } = require("./utils");
 require("dotenv").config();
 
-const PORT = process.env.BACKEND_PORT;
+const jestIsRunning = process.env.NODE_ENV === "test";
 
 const runServer = async () => {
   try {
     const db = await connect();
+    const port = jestIsRunning
+      ? process.env.BACKEND_TESTING_PORT
+      : process.env.BACKEND_PORT;
 
     const app = express();
     app.locals = {
@@ -28,13 +31,19 @@ const runServer = async () => {
     };
     app.use(express.json());
     app.use(routes);
-    app.listen(PORT);
+    app.listen(port);
 
-    log(`Server is up and running @ port ${PORT}`);
+    log(`Server is up and running @ port ${port}`);
+
+    return app;
   } catch (e) {
     log("An error occurred when trying to run the server:");
     log(e);
   }
 };
 
-runServer();
+if (!jestIsRunning) {
+  runServer();
+}
+
+module.exports = runServer;

@@ -28,6 +28,10 @@ It's much simpler to use than [Node's Crypto module](https://nodejs.org/api/cryp
 
 - configure [Winston](https://www.npmjs.com/package/winston) logger and use it for nicer logs.
 - maybe move `encrypt` and `decrypt` from `./src/index.js` into `retrieveData.js` and `storeData.js`, because they are uniquely used in those 2 routes; but for this demo it isn't worth it, so they're staying there.
+- move mock data out of `./tests/index.test.js` into separate file(s).
+- test that `./logs/log.txt` actually updates
+
+Some of these improvements are highlit with `// TODO` comments in the code.
 
 ### Notes / Questions
 

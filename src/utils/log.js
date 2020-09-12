@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+
 const logFile = fs.createWriteStream(
   path.join(__dirname, "../../logs/log.txt"),
   {
