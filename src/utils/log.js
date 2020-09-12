@@ -11,5 +11,5 @@ module.exports = (msg) => {
   // TODO [Improvement]: use momentJs and print a prettier time than just the unix timestamp
   const loggedMsg = `[${new Date().getTime()}] ${msg}`;
   logFile.write(`${loggedMsg}\n`);
-  console.log(loggedMsg);
+  console.log(msg); // "msg" also logs the errors' stack
 };
