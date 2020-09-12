@@ -73,7 +73,6 @@ describe(`Should store "employees" and fetch their data`, () => {
       .expect((res) => {
         expect(res.status).toEqual(200);
         const data = JSON.parse(res.text);
-        console.log(data[0]);
         expect(data.length).toEqual(1);
         expect(data[0].id).toEqual(employeeThree.id);
         expect(data[0].value).toEqual(employeeThree.value);
