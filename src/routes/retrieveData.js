@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
           decryption_key
         );
 
-        return { id, value: JSON.parse(decryptedValue) };
+        return { id: data.id, value: JSON.parse(decryptedValue) };
       } catch (e) {
         // Decryption failed due to an invalid key
         req.app.locals.log(
