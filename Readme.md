@@ -26,10 +26,11 @@ It's much simpler to use than [Node's Crypto module](https://nodejs.org/api/cryp
 
 ### Possible improvements
 
+- add [Husky](https://www.npmjs.com/package/husky) in order to [validate commit messages](https://www.conventionalcommits.org/en/v1.0.0/) and run the tests automatically before committing.
 - configure [Winston](https://www.npmjs.com/package/winston) logger and use it for nicer logs.
 - maybe move `encrypt` and `decrypt` from `./src/index.js` into `retrieveData.js` and `storeData.js`, because they are uniquely used in those 2 routes; but for this demo it isn't worth it, so they're staying there.
 - move mock data out of `./tests/index.test.js` into separate file(s).
-- test that `./logs/log.txt` actually updates
+- test that `./logs/log.txt` is actually filled with relevant information (ie: `Data with ID (...) could not be decrypted using key (...)`)
 
 Some of these improvements are highlit with `// TODO` comments in the code.
 
