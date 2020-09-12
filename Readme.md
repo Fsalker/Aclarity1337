@@ -16,7 +16,7 @@ The name is a partial anagram of a certain word, on top of which I've appended a
 
 Optionally, run the tests using `npm run test`.
 
-A log file will be populated in `./logs`, where you may see various information regarding the running server (and thrown errors).
+A log file will be populated in `./logs`, where you may see various information regarding the running server (including thrown errors).
 
 ### Encryption
 
